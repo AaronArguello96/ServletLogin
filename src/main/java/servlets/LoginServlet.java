@@ -7,12 +7,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import dao.UsuarioDAO;
+import entities.Usuarios;
 import utils.HibernateUtil;
 
 /**
@@ -65,7 +67,14 @@ public class LoginServlet extends HttpServlet {
 
 			if (usuario.validate(session, user, pass)) {
 				logger.info("El usuario se ha logueado correctamente.");
-				pw.println("¡Bienvenido a mi tienda online!");
+				Usuarios datosUsuario = new Usuarios();
+				String apellido1 = datosUsuario.getApellido1();
+				String apellido2 = datosUsuario.getApellido2();
+				HttpSession session1 = request.getSession(true);
+				session1.setAttribute("nombre", user);
+				session1.setAttribute("apellido1", apellido1);
+				session1.setAttribute("apellido2", apellido2);
+				response.sendRedirect("Menu.jsp");  
 			} else {
 				logger.info("El usuario no ha introducido las credenciales correctamente.");
 				response.sendRedirect("Index.html");  
