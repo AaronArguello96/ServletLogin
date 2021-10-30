@@ -70,28 +70,26 @@ public class LoginServlet extends HttpServlet {
 
 			if (usuario.validate(session, user, pass)) {
 				logger.info("El usuario se ha logueado correctamente.");
-<<<<<<< HEAD
+
 				Integer rol = usuario.rolUsuario(session, user, pass);			
 				//Usuarios datosUsuario = new Usuarios();
 				//String apellido1 = datosUsuario.getApellido1();
 				//String apellido2 = datosUsuario.getApellido2();
 				//Integer rol = datosUsuario.getRoles();
-				HttpSession session1 = request.getSession(true);
-				session1.setAttribute("nombre", user);
+				
 				//session1.setAttribute("apellido1", apellido1);
 				//session1.setAttribute("apellido2", apellido2);
-				session1.setAttribute("rol", rol);
-=======
+				HttpSession session1 = request.getSession(true);
+				
 				Usuarios datosUsuario = new Usuarios();
 				String apellido1 = datosUsuario.getApellido1();
 				String apellido2 = datosUsuario.getApellido2();
 				LocalTime fecha = LocalTime.now();
-				HttpSession session1 = request.getSession(true);
 				session1.setAttribute("nombre", user);
 				session1.setAttribute("apellido1", apellido1);
 				session1.setAttribute("apellido2", apellido2);
 				session1.setAttribute("fecha", fecha);
->>>>>>> feature_control_sesiones
+				session1.setAttribute("rol", rol);
 				response.sendRedirect("Menu.jsp");  
 				session1.setMaxInactiveInterval(0);
 			} else {
