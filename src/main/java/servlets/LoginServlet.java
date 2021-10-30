@@ -2,6 +2,9 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import java.time.LocalTime;
+import java.time.format.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -70,11 +73,14 @@ public class LoginServlet extends HttpServlet {
 				Usuarios datosUsuario = new Usuarios();
 				String apellido1 = datosUsuario.getApellido1();
 				String apellido2 = datosUsuario.getApellido2();
+				LocalTime fecha = LocalTime.now();
 				HttpSession session1 = request.getSession(true);
 				session1.setAttribute("nombre", user);
 				session1.setAttribute("apellido1", apellido1);
 				session1.setAttribute("apellido2", apellido2);
+				session1.setAttribute("fecha", fecha);
 				response.sendRedirect("Menu.jsp");  
+				session1.setMaxInactiveInterval(0);
 			} else {
 				logger.info("El usuario no ha introducido las credenciales correctamente.");
 				response.sendRedirect("Index.html");  

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.time.*, java.time.format.*"%>
+<%@ page import="java.util.*, dao.RolDAO, entities.Roles, servlets.LoginServlet" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,18 +8,12 @@
 <title></title>
 </head>
 <body>
-
-	<div class="headerText center">
-		<div>Bienvenido, ${sessionScope.nombre}
-			${sessionScope.apellido1} ${sessionScope.apellido2}</div>
-		<div>
-			Hora del login =&nbsp<%=LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:SS"))%></div>
+	<div><b>Usuario:</b> <%=session.getAttribute("nombre")%> <b>Fecha login:</b> <%=session.getAttribute("fecha") %></div>
+	<div>
+		<input type=<%= (request.getRequestURI().endsWith("Menu.jsp")) ? "hidden":"button" %> value="Volver" onClick="history.go(-1);">
+		<form id="Logout" action="Logout" method="post">
+			<input type="submit" value="Log out" id="button-logout" />
+		</form>
 	</div>
-	<form>
-		<p class="center">
-			<button type="submit" formaction="Menu.jsp">Volver al menu</button>
-		</p>
-	</form>
-
 </body>
 </html>
