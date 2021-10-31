@@ -18,5 +18,7 @@
   <property name="hbm2ddl.auto">update</property>
   <mapping class="entities.Usuarios"/> 
   <mapping class="entities.Roles"/> 
+  <mapping class="entities.Categorias"/> 
+  <mapping class="entities.Productos"/> 
  </session-factory>
 </hibernate-configuration>

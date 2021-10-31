@@ -11,23 +11,23 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import dao.RolDAO;
+import dao.CategoriaDAO;
 import utils.HibernateUtil;
 
 /**
- * Servlet implementation class AltaRolServlet
+ * Servlet implementation class AltaCategoriaServlet
  */
-@WebServlet(name = "AltaRolServlet", urlPatterns = "/AltaRolServlet")
-public class AltaRolServlet extends HttpServlet {
+@WebServlet(name = "AltaCategoriaServlet", urlPatterns = "/AltaCategoriaServlet")
+public class AltaCategoriaServlet extends HttpServlet {
 	
 	static SessionFactory sessionFactory;
-	private static Logger logger = LogManager.getLogger(AltaRolServlet.class);
+	private static Logger logger = LogManager.getLogger(AltaCategoriaServlet.class);
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AltaRolServlet() {
+    public AltaCategoriaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,9 +45,7 @@ public class AltaRolServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		// TODO Auto-generated method stub
-		logger.info("Comienza la ejecución del servlet de login.");
+		logger.info("Comienza la ejecución del servlet de alta de categorias.");
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
@@ -55,33 +53,33 @@ public class AltaRolServlet extends HttpServlet {
 			PrintWriter pw = response.getWriter();
 			response.setContentType("text/html");
 
-			String nombreRol = request.getParameter("nombreRol");
+			String nombre = request.getParameter("nombre");
+			String descripcion = request.getParameter("descripcion");
 			
-			RolDAO roldao = new RolDAO();     	
+			CategoriaDAO categoriadao = new CategoriaDAO();     	
 
-			roldao.insertRol(nombreRol);
+			categoriadao.insertCategoria(nombre, descripcion);
 			
 			response.sendRedirect("Menu.jsp");
 			
-			logger.info("El usuario ha insertado un rol en la BD.");
+			logger.info("El usuario ha insertado una categoria en la BD.");
 			
 			pw.close();
 			
 		} catch (Exception e) {
-			logger.error("Error al ingresar un rol", e);
+			logger.error("Error al ingresar una categoria.", e);
 
 		} finally {
 			if (session != null) {
 				session.close();
-				logger.info("Cerramos la sesion del servlet alta rol");
+				logger.info("Cerramos la sesion del servlet alta categoria.");
 			}
 		}
 
 		// Cerramos la sesion
 		session.close();
 
-		logger.info("Se acaba la ejecución del servlet alta rol.");
+		logger.info("Se acaba la ejecución del servlet alta categoria.");
 	}
-
 
 }

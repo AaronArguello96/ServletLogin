@@ -1,10 +1,7 @@
 package dao;
 
 import java.util.List;
-
 import org.hibernate.Session;
-
-import entities.Roles;
 import entities.Usuarios;
 
 public class UsuarioDAO {

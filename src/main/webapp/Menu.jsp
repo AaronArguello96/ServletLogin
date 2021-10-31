@@ -14,6 +14,8 @@
 	<div>
 		<p><a href="Alta_nuevo_rol.jsp">Alta de nuevo Rol</a></p>
 		<p><a href="Listado_roles.jsp">Listado de usuarios</a></p>
+		<p><a href="AddCategorias.jsp">Alta de nueva Categoría</a></p>
+		<p><a href="Listado_categorias.jsp">Listado de categorias</a></p>
 	</div>
 </body>
 </html>

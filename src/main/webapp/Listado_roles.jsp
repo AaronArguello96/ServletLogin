@@ -19,7 +19,7 @@
 	
 	<h2>Listado de roles:</h2>
 		<form action="" method="post">
-			<table>
+			<table border="1">
 				<tr>
 					<th>ID</th>
 					<th>Rol</th>
