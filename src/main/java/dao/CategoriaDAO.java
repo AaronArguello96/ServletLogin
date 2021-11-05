@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import entities.Categorias;
@@ -18,18 +19,19 @@ public class CategoriaDAO {
 		s.getTransaction().commit();
 	}
 	
-	public static List<Categorias> getCategorias(Session s) {
+	public static ArrayList<Categorias> getCategorias(Session s) {
 
-		List<Categorias> categorias = s.createNativeQuery("SELECT * FROM categorias", Categorias.class).list();
+		ArrayList<Categorias> categorias = (ArrayList<Categorias>) s.createNativeQuery("SELECT * FROM categorias", Categorias.class).list();
 		
 		return categorias;
 	}
 	
-	public static List<Categorias> getCategorias(){
+	public static ArrayList<Categorias> getCategorias(){
 		
 		Session s = HibernateUtil.getSessionFactory().openSession();		
-		List<Categorias> list = getCategorias(s);
+		ArrayList<Categorias> list = getCategorias(s);
 		
 		return list;
 	}
+	
 }

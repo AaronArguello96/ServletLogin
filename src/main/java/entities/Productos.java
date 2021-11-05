@@ -111,5 +111,4 @@ public class Productos implements java.io.Serializable {
 	public void setImpuesto(Float impuesto) {
 		this.impuesto = impuesto;
 	}
-
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Alta Rol</title>
 </head>
 <body>
 	<%
@@ -16,25 +16,22 @@
 	}
 	%>
 	<!-- Header -->
-	<%@ include file="Header.jsp"%>
+	<%@ include file="../../header.jsp"%>
 	<div class="altausuario">
-		<h2>Bienvenido a la página para añadir categorías</h2>
+		<h2>Bienvenido a la página para dar de alta un rol</h2>
 
-		<form method="post" action="AltaCategoriaServlet">
+		<form method="post" action="AltaRolServlet">
 			<fieldset>
 				<legend>Introduzca los datos</legend>
 				<table>
 					<tr>
-						<td><label for="rol">Nombre:</label></td>
-						<td><input type="text" id="nombre" name="nombre" /></td>
-						<td><label for="rol">Descripcion:</label></td>
-						<td><input type="text" id="descripcion" name="descripcion" /></td>
+						<td><label for="rol">Rol</label></td>
+						<td><input type="text" id="nombreRol" name="nombreRol" /></td>
 					</tr>
 				</table>
 			</fieldset>
 			<button type="submit" value="Registrar">Registrar</button>
 		</form>
 	</div>
-
 </body>
 </html>

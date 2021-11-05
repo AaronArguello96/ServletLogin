@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 /**
  * Servlet implementation class LogoutServlet
  */
-@WebServlet("/Logout")
+@WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
 
 	private static Logger logger = LogManager.getLogger(LoginServlet.class);

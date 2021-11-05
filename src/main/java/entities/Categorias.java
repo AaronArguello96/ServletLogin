@@ -60,4 +60,9 @@ public class Categorias implements java.io.Serializable {
 		this.descripcion = descripcion;
 	}
 
+	@Override
+	public String toString() {
+		return "Categorias [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
+	}
+	
 }

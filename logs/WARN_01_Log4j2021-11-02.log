@@ -1,0 +1,38 @@
+[2021-11-02 20:15:45] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-11-02 20:15:46] [ WARN ] [SessionFactoryRegistry:100] HHH000277: Could not bind factory to JNDI
+org.hibernate.engine.jndi.JndiException: Error parsing JNDI name []
+	at org.hibernate.engine.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:124)
+	at org.hibernate.engine.jndi.internal.JndiServiceImpl.bind(JndiServiceImpl.java:140)
+	at org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:87)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:396)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at utils.HibernateUtil.buildSessionFactory(HibernateUtil.java:26)
+	at utils.HibernateUtil.<clinit>(HibernateUtil.java:16)
+	at dao.CategoriaDAO.getCategorias(CategoriaDAO.java:31)
+	at dao.CategoriaDAO.main(CategoriaDAO.java:38)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+	at java.naming/javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:702)
+	at java.naming/javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:305)
+	at java.naming/javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:342)
+	at java.naming/javax.naming.InitialContext.getNameParser(InitialContext.java:497)
+	at org.hibernate.engine.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:118)
+	... 8 more
+[2021-11-02 20:16:22] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-11-02 20:16:23] [ WARN ] [SessionFactoryRegistry:100] HHH000277: Could not bind factory to JNDI
+org.hibernate.engine.jndi.JndiException: Error parsing JNDI name []
+	at org.hibernate.engine.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:124)
+	at org.hibernate.engine.jndi.internal.JndiServiceImpl.bind(JndiServiceImpl.java:140)
+	at org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:87)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:396)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at utils.HibernateUtil.buildSessionFactory(HibernateUtil.java:26)
+	at utils.HibernateUtil.<clinit>(HibernateUtil.java:16)
+	at dao.CategoriaDAO.getCategorias(CategoriaDAO.java:31)
+	at dao.CategoriaDAO.main(CategoriaDAO.java:38)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+	at java.naming/javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:702)
+	at java.naming/javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:305)
+	at java.naming/javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:342)
+	at java.naming/javax.naming.InitialContext.getNameParser(InitialContext.java:497)
+	at org.hibernate.engine.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:118)
+	... 8 more

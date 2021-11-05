@@ -10,8 +10,8 @@
 <body>
 	<div><b>Usuario:</b> <%=session.getAttribute("nombre")%> <b>Fecha login:</b> <%=session.getAttribute("fecha") %></div>
 	<div>
-		<input type=<%= (request.getRequestURI().endsWith("Menu.jsp")) ? "hidden":"button" %> value="Volver" onClick="history.go(-1);">
-		<form id="Logout" action="Logout" method="post">
+		<input type=<%= (request.getRequestURI().endsWith("menu.jsp")) ? "hidden":"button" %> value="Volver" onClick="history.go(-1);">
+		<form id="Logout" action="logout" method="post">
 			<input type="submit" value="Log out" id="button-logout" />
 		</form>
 	</div>
